@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://cgsanchez.net/flyer/sitemap.xml
+Sitemap: https://cgsanchez.net/MC2/flyer/sitemap.xml
