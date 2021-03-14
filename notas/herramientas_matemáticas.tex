@@ -1,0 +1,144 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[spanish]{babel}
+%\usepackage{avant}
+%\renewcommand*\familydefault{\sfdefault}
+%\usepackage{helvet}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{mathtools}
+\mathtoolsset{showonlyrefs} 
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\newtheorem{teo}{Teorema}
+\newtheorem{defi}{Definición}
+\newtheorem{prop}{Proposición}
+
+\begin{document}
+\title{Herramientas matemáticas para $mc_2$}
+
+\author{Cristián G. Sánchez}
+
+\date{}
+
+\maketitle
+
+{\bf OJO!!! Esto es sólo un borrador!!!! No creo que esté listo para este año de cursado}
+
+En estas notas recopilo una serie de definiciones, teoremas, etc. que se utilizan en el desarrollo del curso junto con referencias donde profundizar estos conceptos. La profundización {\em no es necesaria} en el marco del curso pero marca un camino para aquelles que deseen  tomar los muchísimos pasadizos y callejuelas que se abren en cada párrafo de física que une estudie.
+
+\section{Conceptos de Álgebra}
+
+Los conceptos de álgebra, salvo indicación en contrario, son extraídos {\em verbatim ac litteratim} de la referencia \ref{LADR}.
+
+\begin{defi}
+    Un {\bf campo} es 
+\end{defi}
+
+\begin{defi}
+    Un {\bf espacio vectorial} sobre el campo $\mathbb{F}$ es un conjunto $V$ sobre el que se definen una adición y multiplicación (cerradas en $V$) con las siguientes propiedades:
+    \begin{itemize}
+        \item {\bf conmutatividad}: $u+v=v+u$ para todo par $u,v\in V$
+        \item {\bf asociatividad}: $(u+v)+w=u+(v+w)$ y $(ab)v=a(bv)$ para todo $u,v,w\in V$ y $a,b\in\mathbb{F}$
+        \item {\bf identidad aditiva}: existe un elemento $0\in V$ tal que  $0+v=v$ para todo $v\in V$
+        \item {\bf inversa aditiva}: para todo $v\in V$ existe un $w\in V$ tal que $v+w=0$. 
+        \item {\bf identidad multiplicativa}: $1v=v$ para todo $v\in V$
+        \item {\bf propiedades distributivas}: $a(u+v)=au+av$ y $(a+b)v=av+bv$ para todo $v, u\in V$ y $a,b\in \mathbb{F}$
+    \end{itemize}
+\end{defi}
+
+\begin{teo}
+    Un espacio vectorial tiene una única identidad aditiva (el vector $0$).
+\end{teo}
+
+\begin{teo}
+    Cada elemento en un espacio vectorial tiene una única inversa aditiva $(-v)=(-1)v$.
+\end{teo}
+
+\begin{defi} Una {\bf combinación lineal} de una lista de vectores $v_1,\ldots,v_m$ en un espacio vectorial $V$ es un vector de la forma
+    \[\sum_{i=i}^{m}a_i v_i,\]
+donde $a_1,\ldots,a_m\in V$.
+\end{defi}
+
+\begin{defi}
+    El conjunto de todas las combinaciones lineales de una lista de vectores $v_1,\ldots,v_m$ se llama el {\bf \em span} de $v_1,\ldots,v_m$ y se denota $\mathrm{span}(v_1,\ldots,v_m)$
+\end{defi}
+
+\begin{defi}
+    Una lista de vectores $v_1,\ldots,v_m$ es {\bf linealmente independiente} si la única eleccción de $a_1,\ldots,a_m$ que hace $\sum_{i=i}^{m}a_i v_i=0$ es $a_1 =\ldots =\ a_m = 0$
+\end{defi}
+
+\begin{defi} Una {\bf base} de un espacio vectorial $V$ es una lista de vectores $e_1,\ldots,e_n$, linealmente independientes tales que 
+    \[V=\mathrm{span}(e_1,\ldots,e_n)\] 
+\end{defi}
+
+\begin{teo}
+    Cualquier par de bases de un espacio vectorial de dimensión finita tiene el mismo número de elementos.
+\end{teo}
+
+\begin{defi}
+    La {\bf dimensión} de un espacio vectorial es el número de elementos en cualquier base para el espacio.
+\end{defi}
+
+\begin{defi}
+
+\end{defi}
+
+\begin{defi}
+    El {\bf producto escalar} es 
+\end{defi}
+
+\begin{defi}
+    Una  {\bf norma} es 
+\end{defi}
+
+\begin{prop}
+    Propiedades de la norma
+\end{prop}
+
+\begin{defi}
+    Un {\bf espacio de Hilbert}
+\end{defi}
+
+
+
+
+
+\section{Conceptos de Números complejos}
+
+\begin{defi} Números complejos
+
+    \begin{itemize}
+        \item Un {\bf número complejo} es un par ordenado $(a,b)$ donde $a,b \in \mathbb{R}$ que se denota $a+ib$.
+        \item El conjunto de todos los números complejos se denota $\mathbb{C}$:
+        \[ \mathbb{C} = \{a+bi : a,b\in \mathbb{R}\}\]
+        \item La {\bf adición y multiplicación} en $\mathbb{C}$ se definen de la forma:
+        \[(a+bi) + (c+di) = (a+c)+(b+d)i,\]
+        \[(a+bi)(c+di) = (ac-bd)+(ad+bc)i;\]
+        donde $a,b,c,d\in\mathbb{R}$
+    \end{itemize}
+
+\end{defi}
+
+\begin{teo} Fórmula de Euler
+
+    Para todo $x\in\mathbb{R}$:
+    \[e^{ix} = \cos x + i \sin x.\]
+
+\end{teo}
+
+\section{Conceptos de Análisis}
+
+\begin{teo}
+    Teorema integral de Cauchy
+\end{teo}
+
+\begin{defi}
+    Función analítica
+\end{defi}
+
+
+
+\end{document}
