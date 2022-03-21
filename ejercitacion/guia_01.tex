@@ -13,6 +13,14 @@
 
 \usepackage{hyperref}
 
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\brah}[1]{(#1|}
+\newcommand{\ham}{\mathcal{H}}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\tr}{\mathrm{Tr}}
+
 \hypersetup{
     colorlinks = true,
     allcolors = blue
@@ -21,7 +29,7 @@
 \begin{document}
 \title{Mecánica Cuántica II}
 
-\author{Guía 0: (Entrada en calor matemática)}
+\author{Guía 1: Postulados, álgebra, evolución temporal }
 
 \date{\today}
 
@@ -35,19 +43,13 @@
     \item Si los ejercicios requieren de soluciones algebráicas respetá las indicaciones de hacerlos ``a mano''. En ese caso cualquier control que quieras usar vale SymPy, Sage, Mathematica, etc.. 
 \end{itemize}
 
-\section*{Entregables}
-
 \begin{enumerate}
-    \item[\bf Ejercicio -1] Enrrolarse en el aula de Google Classroom.
-    \item[\bf Ejercicio 0] Hacer un usuario en Discord y unirse al servidor de MC2.   
-\end{enumerate}
-
-\section*{No Entregables}
-
-\noindent ¡Hacer todos a mano!
-
-\begin{enumerate}
-    \item[\bf Ejercicio 1:] Calcule los autovalores y autovectores de la matriz $H$ definida
+    \item[\bf Ejercicio 1:] Probar que dos autovectores de un operador Hermítico con distinto autovalor son neceariamente ortogonales.
+    \item[\bf Ejercicio 2:] Mostrar que los autovalores de un proyector son todos cero o uno.
+    \item[\bf Ejercicio 3:] Mostrar que un operador arbitrario $\hat{A}$ puede escribirse de la forma $\hat{A}=\hat{B}+i\hat{C}$ donde $\hat{B}$ y $\hat{C}$ son Hermiticos. 
+    \item[\bf Ejercicio 4:] Un operador positivo es tal que $\bra{\psi}\hat{A}\ket{\psi}\geq 0$. Mostrar que un operador positivo es necesariamente Hermítico.
+    \item[\bf Ejercicio 5:] Mostrar que para cualquier operador $\hat{A}$ el producto $\hat{A}^\dagger\hat{A}$ es positivo.
+    \item[\bf Ejercicio 6:] Calcule los autovalores y autovectores de la matriz $H$ definida
     de la forma
     \begin{equation}
         H = \begin{bmatrix}
@@ -55,7 +57,7 @@
             \beta & 0 
             \end{bmatrix}
     \end{equation}
-    \item[\bf Ejercicio 2:] Encuentre la matriz $O$ que diagonaliza $H$, es decir que
+    \item[\bf Ejercicio 7:] Encuentre la matriz $O$ que diagonaliza $H$, es decir que
     \begin{equation}
         O^\dagger H O = D
     \end{equation}
@@ -65,14 +67,14 @@
         U = e^{-i\hbar H}
     \end{equation}
     donde H es la matriz del ejercicio 1 y demuestre que es unitaria.
-    \item[\bf Ejercicio 4:] Dadas las matrices de Pauli:
+    \item[\bf Ejercicio 8:] Dadas las matrices de Pauli:
     \begin{equation}
         \sigma_x = \begin{bmatrix}
             0 & 1 \\
             1 & 0 
             \end{bmatrix}\;
         \sigma_y = \begin{bmatrix}
-            0 & i \\
+            0 & -i \\
             i & 0 
             \end{bmatrix}\;
         \sigma_z = \begin{bmatrix}
@@ -81,14 +83,14 @@
             \end{bmatrix},
     \end{equation} 
     demostrar que son Hermíticas y Unitarias.
-    \item[\bf Ejercicio 5:] 
+    \item[\bf Ejercicio 9:] 
     Demostrar que las matrices de Pauli, junto con la matriz identidad:
     \begin{equation}
         I = \begin{bmatrix}
             1 & 0 \\
             0 & 1 
             \end{bmatrix},
-    \end{equation}forman una base para el espacio vectorial de matrices Hermíticas de $2\times 2$:
+    \end{equation}forman una base para el espacio vectorial complejo de matrices Hermíticas de $2\times 2$:
     \begin{equation}
     H_2(a,b,c,d) = \begin{bmatrix}
         a & c+id \\
@@ -96,9 +98,46 @@
         \end{bmatrix}.
     \end{equation}
 
+    \item[\bf Ejercicio 10:] Dado un Hamiltoniano de la forma
+    \begin{equation}
+        H = \begin{bmatrix}
+            0 & \beta \\
+            \beta & 0 
+            \end{bmatrix}
+    \end{equation}
+    con $\beta$ real menor a cero y el estado inicial
+    \[\ket{\psi(t_0)}=\begin{bmatrix}
+        1  \\
+        0 
+        \end{bmatrix}\]
+        determinar la evolución de la probabilidad de encontrar al sistema en el autoestado de menor energía en función del tiempo.
+
+    \item[\bf Ejercicio 11:] Dadas las matrices de Pauli (cambiamos notación):
+    \begin{equation}
+        \sigma_1 = \begin{bmatrix}
+            0 & 1 \\
+            1 & 0 
+            \end{bmatrix}\;
+        \sigma_2 = \begin{bmatrix}
+            0 & -i \\
+            i & 0 
+            \end{bmatrix}\;
+        \sigma_3 = \begin{bmatrix}
+            1 & 0 \\
+            0 & -1 
+            \end{bmatrix},
+    \end{equation} 
+    y el hecho de que 
+    \[\left[\sigma_{a}, \sigma_{b}\right]=2 i \varepsilon_{a b c} \sigma_{c},\]
+    donde $\varepsilon_{a b c}$ es el {\em símbolo de Levi-Civita}, determinar si existe algún Hamiltoniano de la forma
+    \[\hat{H}(t)=f(t)\sigma_1+g(t)\sigma_2+h(t)\sigma_3\]
+    donde $f(t),g(t)$ y $h(t)$ son funciones reales del tiempo, que conmute consigo mismo a tiempos diferentes. 
+    
+    \item[\bf Ejercicio 12:]Faltan aquí un par de ejercicios numéricos que agregaré en breve
+
 \end{enumerate}
 
-Puede ser útil las siguiente referencia:
+\noindent Puede ser útil la siguiente referencia:
  \begin{itemize}
      \item Axler, S. J. (1997). Linear Algebra Done Right. New York: Springer. ISBN: 0387982582 (se puede bajar de \href{https://drive.google.com/file/d/1_qZOW2kRbgqRhuUlvlGcM7RA3KjVcvuB/view?usp=sharing}{acá})
  \end{itemize}
@@ -107,6 +146,7 @@ o cualquier bibliografía de álgebra lineal que te sea familiar. El libro de co
     \item Nielsen, Michael A., Chuang, Isaac L.. (2010). Quantum Computation and Quantum Information, (10th Anniversary Edition), Cambridge University Press. (se puede bajar de \href{https://drive.google.com/file/d/1qk7L6Roq1WlGWSahW66ZX-rwl_wjTxcL/view?usp=sharing}{acá} )
 \end{itemize}
 tiene un buen capítulo de repaso de álgebra lineal.
+
 \begin{center}
     $\clubsuit$~$\clubsuit$~$\clubsuit$
   \end{center}

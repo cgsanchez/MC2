@@ -1,0 +1,3 @@
+#!/bin/bash
+
+rm *.nav *.log *.synctex.gz *.snm *.out *.aux *.fls *.fdb* *.toc

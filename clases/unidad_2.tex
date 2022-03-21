@@ -1,0 +1,110 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+
+\usepackage{hyperref}
+\usepackage{graphicx}
+%\usepackage{amsmath}
+
+\hypersetup{
+    colorlinks = true,
+    allcolors = blue
+}
+
+\usetheme{Madrid}
+\usecolortheme{seagull}
+\usefonttheme{professionalfonts}
+\setbeamertemplate{footline}[page number]
+\setbeamertemplate{navigation symbols}{}
+
+%Information to be included in the title page:
+\title{Principio Variacional}
+%\subtitle{Template}
+\author{Cristián G. Sánchez}
+
+\date{2021}
+
+\begin{document}
+
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\brah}[1]{(#1|}
+\newcommand{\ham}{\mathcal{H}}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\tr}{\mathrm{Tr}}
+
+\frame{\titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+    \frametitle{Principio Variacional}
+    %\framesubtitle{Axioma 1}
+    
+    \begin{block}{Teorema variacional}
+        Sea $\ket{\epsilon_0}$ el estado fundamental del Hamiltoniano $\hat{H}$ para un sistema $S$ y $\ket{\psi}$ un elemento cualquiera (normalizado) del espacio $\mathcal{H}_S$, entonces
+            \[ \epsilon_0 \leq \bra{\psi}\hat{H}\ket{\psi} \]
+    \end{block}
+
+    $\bra{\psi}\hat{H}\ket{\psi}$ una cota superior para el {\em valor de expectación} de la energía y es, por lo tanto, una herramienta poderosa.
+
+    \begin{block}{Lema}
+        Si $\braket{\phi}{\epsilon_i}=0$ para todo $i<n$ entonces 
+            \[ \epsilon_n \leq \bra{\phi}\hat{H}\ket{\phi} \]
+    \end{block}
+    
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+    \frametitle{Principio Variacional}
+    %\framesubtitle{Axioma 1}
+    
+\begin{itemize}
+    \item En la práctica el principio variacional es útil si podemos construir el estado $\ket{\psi}$ como una función de algún conjunto de parámetros respecto de los cuales minimizar el valor de expectación de la energía.
+    \item Además, si logramos encontrar un elemento del espacio de Hilbert del sistema que sea ortogonal a los primeros $n-1$ estados entonces tendremos una aproximación para estados de energía más alta. En general estas aproximaciones son peores que la del estado fundamental (no tengo una justificación clara para ese argumento pero se puede buscar (ejercicio!)).
+    \item La precisión en la aproximación de la energía es mayor que en la de la función de onda, Schwabl tiene un argumento para esto (p. 107).
+\end{itemize}
+    
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+    \frametitle{Principio Variacional Lineal}
+    %\framesubtitle{Axioma 1}
+    
+    \begin{block}{Principio variacional lineal}
+        Sea $\{\ket{\alpha_i}\}$ un conjunto ortonormal finito tal que $\mathrm{span}(\{\ket{\alpha_i}\}\in \mathcal{H}_S$. La combinación lineal
+        \[ \ket{\psi^m} = \sum_i c^m_i \ket{\alpha_i} \] minimiza el valor de expectación del Hamiltoniano del sistema si los $c_i$ satisfacen la ecuación de autovalores
+        \[ \mathbf{H}\mathbf{c}_m=\epsilon_m \mathbf{c}_m \]
+        donde $\mathbf{H}$ es la matriz formada por los elementos $H_{ij}=\bra{\alpha_i}\hat{H}\ket{\alpha_j}$ y $\mathbf{c}$ es un vector columna de $c_i$. Las sucesivas soluciones $\epsilon_m$ son aproximaciones al estado fundamental y estados excitados de $S$, de la misma manera las $\ket{\psi^m}$ aproximan sus funciones de onda.
+    \end{block}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+    \frametitle{Principio Variacional Lineal}
+    %\framesubtitle{Axioma 1}
+    
+    \begin{itemize}
+        \item Ambos teoremas nos proporcionan métodos de aproximación muy poderosos.
+        \item El método variacional lineal es muy útil computacionalmente si puedo construir de alguna manera una buena base $\{\ket{\alpha_i}\}$.
+        \item Lo buena o mala que sea la base dependerá de cuanto el $\mathrm{span}(\{\ket{\alpha_i}\}$ se parezca a $\mathcal{H}_S$. Si la base barre la totalidad del espacio de Hilbert del sistema las soluciones serán exactas ya que las combinaciones lineales serán una base ortonormal para $\mathcal{H}_S$.
+        \item En muchos (la mayoría) de los sistemas que nos interesan la dimensión del espacio de Hilbert del sistema es infinita y allí se impone una fuerte limitación a la calidad de las aproximaciones variacionales que podamos encontrar.
+        \item Las aproximaciones a las energías y autofunciones nos permiten encontrar aproximaciones a funciones del Hamiltoniano tales como el operador evolución.
+    \end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Síntesis y recursos:}
+
+\begin{itemize}
+\item El argumento de Schwabl que meciono más arriba.
+\item Galindo y Pascual como siempre tienen una buena demostración del teorema con una matemática más completita que otros libros.  
+\end{itemize}
+\end{frame}
+
+\end{document}
