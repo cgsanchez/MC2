@@ -133,7 +133,31 @@
     \[\hat{H}(t)=f(t)\sigma_1+g(t)\sigma_2+h(t)\sigma_3\]
     donde $f(t),g(t)$ y $h(t)$ son funciones reales del tiempo, que conmute consigo mismo a tiempos diferentes. 
     
-    \item[\bf Ejercicio 12:]Faltan aquí un par de ejercicios numéricos que agregaré en breve
+    \item[\bf Ejercicio 12:] Integrar numéricamente la ecuación de movimiento generada por el Hamiltoniano
+    $$H = \begin{bmatrix}
+          0 & \beta \\
+          \beta & 0 
+          \end{bmatrix}
+        +
+        E_0\ \sin(\omega t) \begin{bmatrix}
+            -d & 0 \\
+            0 & d 
+            \end{bmatrix}$$ 
+    para una serie de valores de $\omega$ y $E_0$.
+
+    Para la integración, comparar un desarrollo en serie a primer order del propagador
+    $$ \hat{U}(\Delta t) = \hat{I} - \frac{i}{\hbar}\hat{H}(t)\Delta t$$
+    con el propagador de Crank-Nicholson
+    $$ \hat{U}(\Delta t) = \frac{\hat{I}+\frac{1}{2}\frac{i}{\hbar}\hat{H}(t)\Delta t}
+    {\hat{I}-\frac{1}{2}\frac{i}{\hbar}\hat{H}(t)\Delta t}$$
+    Preparar al sistema en el estado fundamental y calcular las probabilidades de encontrarlo en el estado fundamental y excitado así como la energía en función del tiempo.
+
+    Comparar los casos en resonancia ($\omega = 2\beta/\hbar$) y fuera de la resonancia y distintos órdenes de magnitud de la cantidad $E_0 d$ en relación a $\beta$.
+
+    Extender el código cambiando $\sen(\omega t)$ por un pulso gausiano de la forma $\sin(\omega t)\exp(-(t-t0)^2/2\sigma^2)/\sigma/\sqrt(2\pi)$. Encontrar un pulso que excite al sistema desde el estado fundamental al excitado y determinar que ocurre cuando ese mismo pulso se aplica a un sistema preparado en el estado excitado.
+
+    Si le quedan tiempo y ganas comparar la evolución a tiempos largos utilizando Crank-Nicholson con el integrador por defecto en {\tt odeint}.
+
 
 \end{enumerate}
 
